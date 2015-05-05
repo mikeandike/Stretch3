@@ -16,8 +16,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSArray *warrenIsCool = @[@"A", @"B", @"C", @"D", @"E"];
+    
+    NSLog(@"%@" ,[self reverseArray:warrenIsCool]);
+    
     return YES;
+}
+
+- (NSArray *)reverseArray:(NSArray *)warrenIsCool{
+    NSMutableArray *backwards = [NSMutableArray new];
+    for (int i = (int)warrenIsCool.count - 1; i>=0; i--) {
+        [backwards addObject:warrenIsCool[i]];
+    }
+    return backwards;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
